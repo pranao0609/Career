@@ -1,8 +1,35 @@
 from fastapi import FastAPI, UploadFile, File
 from career_orchestrator import CareerOrchestrator, ResumeParser
 
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://localhost:8080",
+        "http://localhost:8081",
+        "https://frontend-app-278398219986.asia-south1.run.app",  # Your frontend URL
+        "https://*.run.app",  # Allow all Cloud Run domains
+        "*"  # Allow all origins for development - remove in production
+    ],
+    allow_credentials=False,  # Set to False for broader compatibility
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"],
+    allow_headers=[
+        "Accept",
+        "Accept-Language", 
+        "Content-Language",
+        "Content-Type",
+        "Authorization",
+        "X-Requested-With",
+        "Origin",
+        "Access-Control-Request-Method",
+        "Access-Control-Request-Headers"
+    ],
+    expose_headers=["*"],
+)
 # Initialize orchestrator with your project + region
 orchestrator = CareerOrchestrator()
 resume_parser = ResumeParser()
