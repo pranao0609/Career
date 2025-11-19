@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI Career & Skills Advisor Design System */
+
+@layer base {
+     :root {
+        /* Brand Colors - Professional Career Theme */
+        --background: 0 0% 100%;
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+        /* Professional Blue Palette */
+        --primary: 213 94% 68%;
+        --primary-foreground: 0 0% 100%;
+        --primary-hover: 213 94% 58%;
+        --primary-glow: 213 94% 78%;
+        /* Success Green for Career Growth */
+        --success: 142 76% 36%;
+        --success-foreground: 0 0% 100%;
+        --success-light: 142 76% 46%;
+        /* Warning Orange for Skills Gap */
+        --warning: 32 95% 44%;
+        --warning-foreground: 0 0% 100%;
+        /* Professional Gray Palette */
+        --secondary: 210 11% 96%;
+        --secondary-foreground: 222 47% 11%;
+        --muted: 210 11% 96%;
+        --muted-foreground: 215 25% 40%;
+        --accent: 210 11% 96%;
+        --accent-foreground: 222 47% 11%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 214 32% 91%;
+        --input: 214 32% 91%;
+        --ring: 213 94% 68%;
+        /* Professional Gradients */
+        --gradient-hero: linear-gradient(135deg, hsl(213 94% 68%), hsl(213 94% 78%));
+        --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 11% 98%));
+        --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+        --gradient-primary: linear-gradient(135deg, hsl(213 94% 68%), hsl(213 94% 58%));
+        /* Shadows */
+        --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+        --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+        --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+        --shadow-glow: 0 0 40px hsl(213 94% 68% / 0.3);
+        /* Animations */
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        --radius: 0.75rem;
+        --sidebar-background: 0 0% 98%;
+        --sidebar-foreground: 240 5.3% 26.1%;
+        --sidebar-primary: 240 5.9% 10%;
+        --sidebar-primary-foreground: 0 0% 98%;
+        --sidebar-accent: 240 4.8% 95.9%;
+        --sidebar-accent-foreground: 240 5.9% 10%;
+        --sidebar-border: 220 13% 91%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+    .dark {
+        /* Dark Theme - Professional Night Mode */
+        --background: 222 47% 6%;
+        --foreground: 0 0% 98%;
+        --card: 222 47% 8%;
+        --card-foreground: 0 0% 98%;
+        --popover: 222 47% 8%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 213 94% 68%;
+        --primary-foreground: 0 0% 100%;
+        --primary-hover: 213 94% 78%;
+        --primary-glow: 213 94% 58%;
+        --success: 142 76% 46%;
+        --success-foreground: 0 0% 100%;
+        --success-light: 142 76% 56%;
+        --warning: 32 95% 54%;
+        --warning-foreground: 0 0% 100%;
+        --secondary: 222 47% 12%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 222 47% 12%;
+        --muted-foreground: 215 25% 70%;
+        --accent: 222 47% 12%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 84% 70%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 222 47% 15%;
+        --input: 222 47% 15%;
+        --ring: 213 94% 68%;
+        --sidebar-background: 222 47% 4%;
+        --sidebar-foreground: 0 0% 95%;
+        --sidebar-primary: 213 94% 68%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 222 47% 10%;
+        --sidebar-accent-foreground: 0 0% 95%;
+        --sidebar-border: 222 47% 12%;
+        --sidebar-ring: 213 94% 68%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground font-sans;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        line-height: 1.6;
+        letter-spacing: -0.01em;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-semibold tracking-tight;
+    }
+    /* Custom Utilities */
+    .gradient-hero {
+        background: var(--gradient-hero);
+    }
+    .gradient-card {
+        background: var(--gradient-card);
+    }
+    .gradient-success {
+        background: var(--gradient-success);
+    }
+    .gradient-primary {
+        background: var(--gradient-primary);
+    }
+    .shadow-glow {
+        box-shadow: var(--shadow-glow);
+    }
+    .transition-smooth {
+        transition: var(--transition-smooth);
+    }
+    .transition-bounce {
+        transition: var(--transition-bounce);
+    }
+    /* Scrollbar Styling */
+     ::-webkit-scrollbar {
+        width: 6px;
+    }
+     ::-webkit-scrollbar-track {
+        @apply bg-secondary;
+    }
+     ::-webkit-scrollbar-thumb {
+        @apply bg-primary/30 rounded-full;
+    }
+     ::-webkit-scrollbar-thumb:hover {
+        @apply bg-primary/50;
+    }
+}
