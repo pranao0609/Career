@@ -463,19 +463,3 @@ async def shutdown_event():
 # ============================================================
 # RUN SERVER
 # ============================================================
-
-if __name__ == "__main__":
-    print("🚀 Starting Dynamic Career Roadmap API...")
-    print("✅ Enhanced architecture with session management")
-    print("🔄 CORS enabled for all origins")
-    print("📊 Health monitoring and stats endpoints active")
-    print("🤖 AI-powered roadmap generation ready")
-    
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
-        port=int(os.getenv("PORT", 8080)),  # Changed from 8081 to 8080
-        reload=False,
-        log_level="info"
-    )
-
