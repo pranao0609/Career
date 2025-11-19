@@ -21,7 +21,7 @@ def get_llm():
         raise ValueError("GROQ_API_KEY environment variable is required")
     
     return ChatGroq(
-        model="llama-3.1-70b-versatile",
+        model="llama-3.3-70b-versatile",
         temperature=0.3,
         max_tokens=8192,
         groq_api_key=groq_api_key
